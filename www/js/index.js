@@ -46,6 +46,12 @@ $("#showTable").click(function(){
        for (i = 0; i < len; i++){
           $("#TableData").append("<tr><td>"+results.rows.item(i).id+"</td><td>"+results.rows.item(i).title+"</td><td>"+results.rows.item(i).desc+"</td><td><a href='edit.html?id="+results.rows.item(i).id+"&title="+results.rows.item(i).title+"&desc="+results.rows.item(i).desc+"'>Edit</a> &nbsp;&nbsp; <a class='delete' href='#' id='"+results.rows.item(i).id+"'>Delete</a></td></tr>");
        }
+
+       //Put the result into an array
+       let jsonObject = [];
+       for (i = 0; i < len; i++){
+          jsonObject.push(results.rows.item(i));
+       }
     }, null);
   });
 });
